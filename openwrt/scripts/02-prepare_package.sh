@@ -34,12 +34,10 @@ mv ../master/lite-23.05/haproxy feeds/packages/net/haproxy
 sed -i '/ADDON+=USE_QUIC_OPENSSL_COMPAT=1/d' feeds/packages/net/haproxy/Makefile
 
 # mihomo - prebuilt
-if curl -s "https://$mirror/openwrt/23-config-common-$cfg_ver" | grep -q "^CONFIG_PACKAGE_luci-app-nikki=y" && [ "$NO_APPS" != "y" ]; then
+if curl -s "https://$mirror/openwrt/23-config-common-$cfg_ver" | grep -q "^CONFIG_PACKAGE_luci-app-nikki=y" && [ "$MINIMAL_BUILD" = "y" ] && [ "$NO_APPS" != "y" ]; then
     mkdir -p files/etc/nikki/run
-    if [ "$MINIMAL_BUILD" = "y" ]; then
-        curl -Lso files/etc/nikki/run/GeoSite.dat https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
-        curl -Lso files/etc/nikki/run/GeoIP.dat https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
-    fi
+    curl -Lso files/etc/nikki/run/GeoSite.dat https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+    curl -Lso files/etc/nikki/run/GeoIP.dat https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
     curl -Lso files/etc/nikki/run/geoip.metadb https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.metadb
     curl -Lso files/etc/nikki/run/ASN.mmdb https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
     curl -Lso dist.zip https://$github/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip
