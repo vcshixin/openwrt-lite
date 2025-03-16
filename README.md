@@ -5,7 +5,7 @@
 
 仅需安装、配置一次，后续升级无需重新刷写、配置固件
 
-欢迎加入交流群：[OpenWrt-mihomo](https://t.me/+xqUr1lp9FD0xZDM1)
+欢迎加入交流群：[Infinity Nikki](https://t.me/+xqUr1lp9FD0xZDM1)
 
 #### 固件下载：
 https://github.com/pmkol/openwrt-lite/releases
@@ -79,12 +79,11 @@ Ext4：固件文件名带有 “ext4”，Ext4 文件系统具备整个分区可
   |  :----  |  :----  |  :----  |
   | Xray | Dockerman | SpeedTest |
   | Sing-Box | Docker | UPnP |
-  | Mihomo | Dockerd | Bandwidth Monitor |
-  | MosDNS | Docker-compose | EQoS |
-  | DDNS | | Socat |
-  | Frp | | L2TP |
-  | Tailscale | | WireGuard |
-  | ZeroTier | | |
+  | MosDNS | Dockerd | Bandwidth Monitor |
+  | DDNS | Docker-compose | EQoS |
+  | Frp | | Socat |
+  | Tailscale | | L2TP |
+  | ZeroTier | | WireGuard |
   | Watchcat | | |
   | Aira2 | | |
   | NATMap | | |
