@@ -65,7 +65,7 @@ fi
 
 # source branch
 get_branch_version=$(curl -s "https://api.github.com/repos/pmkol/openwrt-source/branches" | jq -r '.[].name | select(startswith("v"))' | sort -V | tail -n 1)
-get_branch_timestamp=$(curl -s "https://api.github.com/repos/pmkol/openwrt-source/commits?sha=$get_branch_version" | jq -r '.[0].commit.committer.date' | xargs -I {} date -d "{}" +%s)
+get_branch_timestamp=$(curl -s "https://api.github.com/repos/openwrt/openwrt/commits?sha=$get_branch_version" | jq -r '.[0].commit.committer.date' | xargs -I {} date -d "{}" +%s)
 
 export toolchain_version=openwrt-23.05
 
