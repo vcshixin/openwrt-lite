@@ -62,7 +62,7 @@ curl -s https://$mirror/openwrt/patch/packages-patches/v4l2loopback/100-fix-buil
 # openvswitch
 sed -i '/ovs_kmod_openvswitch_depends/a\\t\ \ +kmod-sched-act-sample \\' feeds/packages/net/openvswitch/Makefile
 
-# ubootenv-nvram - 6.11 (openwrt-23.05.5)
+# ubootenv-nvram - 6.11 (openwrt-23.05)
 mkdir -p package/kernel/ubootenv-nvram/patches
 curl -s https://$mirror/openwrt/patch/packages-patches/ubootenv-nvram/010-make-ubootenv_remove-return-void-for-linux-6.11.patch > package/kernel/ubootenv-nvram/patches/010-make-ubootenv_remove-return-void-for-linux-6.11.patch
 
