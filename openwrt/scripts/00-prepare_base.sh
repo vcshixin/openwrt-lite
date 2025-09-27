@@ -7,11 +7,11 @@ sed -i '/mirror2.openwrt.org/a\push @mirrors, '\''https://mirror.apad.pro/source
 if [ "$platform" != "x86_64" ]; then
     rm -rf package/boot/uboot-rockchip package/boot/arm-trusted-firmware-rockchip
     if [ "$platform" = "rk3568" ]; then
-        git clone https://$github/pmkol/package_boot_uboot-rockchip package/boot/uboot-rockchip -b v2024.04 --depth 1
-        git clone https://$github/pmkol/arm-trusted-firmware-rockchip package/boot/arm-trusted-firmware-rockchip -b 240222 --depth 1
+        git clone https://$github/apadpro/package_boot_uboot-rockchip package/boot/uboot-rockchip -b v2024.04 --depth 1
+        git clone https://$github/apadpro/arm-trusted-firmware-rockchip package/boot/arm-trusted-firmware-rockchip -b 240222 --depth 1
     else
-        git clone https://$github/pmkol/package_boot_uboot-rockchip package/boot/uboot-rockchip -b v2023.04 --depth 1
-        git clone https://$github/pmkol/arm-trusted-firmware-rockchip package/boot/arm-trusted-firmware-rockchip -b 230419 --depth 1
+        git clone https://$github/apadpro/package_boot_uboot-rockchip package/boot/uboot-rockchip -b v2023.04 --depth 1
+        git clone https://$github/apadpro/arm-trusted-firmware-rockchip package/boot/arm-trusted-firmware-rockchip -b 230419 --depth 1
     fi
 fi
 
@@ -246,10 +246,10 @@ rm -rf feeds/{luci/applications/luci-app-dockerman,packages/utils/docker-compose
 mv ../master/extd-23.05/docker-compose feeds/packages/utils/docker-compose
 if [ "$MINIMAL_BUILD" != "y" ]; then
     rm -rf feeds/packages/utils/{docker,dockerd,containerd,runc,docker-compose}
-    git clone https://$github/pmkol/packages_utils_docker feeds/packages/utils/docker -b $docker_branch --depth 1
-    git clone https://$github/pmkol/packages_utils_dockerd feeds/packages/utils/dockerd -b $docker_branch --depth 1
-    git clone https://$github/pmkol/packages_utils_containerd feeds/packages/utils/containerd -b $docker_branch --depth 1
-    git clone https://$github/pmkol/packages_utils_runc feeds/packages/utils/runc -b $docker_branch --depth 1
+    git clone https://$github/apadpro/packages_utils_docker feeds/packages/utils/docker -b $docker_branch --depth 1
+    git clone https://$github/apadpro/packages_utils_dockerd feeds/packages/utils/dockerd -b $docker_branch --depth 1
+    git clone https://$github/apadpro/packages_utils_containerd feeds/packages/utils/containerd -b $docker_branch --depth 1
+    git clone https://$github/apadpro/packages_utils_runc feeds/packages/utils/runc -b $docker_branch --depth 1
     sed -i '/cgroupfs-mount/d' feeds/packages/utils/dockerd/Config.in
     sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
 fi

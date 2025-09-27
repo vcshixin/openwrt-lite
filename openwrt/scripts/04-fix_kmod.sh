@@ -86,7 +86,7 @@ curl -s https://$mirror/openwrt/patch/packages-patches/xtables-addons/900-mconfi
 
 # dahdi-linux
 rm -rf feeds/telephony/libs/dahdi-linux
-git clone https://$github/pmkol/telephony_libs_dahdi-linux feeds/telephony/libs/dahdi-linux --depth 1
+git clone https://$github/apadpro/telephony_libs_dahdi-linux feeds/telephony/libs/dahdi-linux --depth 1
 
 # routing - batman-adv
 rm -rf feeds/routing/batman-adv
