@@ -124,7 +124,7 @@ jobs:
 
     - name: Create release
       continue-on-error: true
-      uses: pmkol/release-action@main
+      uses: ncipollo/release-action@v1.20.0
       with:
         name: ${{ matrix.tag.version }}
         allowUpdates: true
