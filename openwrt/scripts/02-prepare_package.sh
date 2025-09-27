@@ -15,7 +15,7 @@ rm -rf feeds/packages/libs/boost/*
 curl -s https://$mirror/openwrt/patch/packages-patches/boost/Makefile > feeds/packages/libs/boost/Makefile
 
 # default settings
-git clone https://$github/pmkol/default-settings package/new/default-settings -b lite --depth 1
+mv ../master/archive-23.05/default-settings package/new/default-settings
 if [ "$OPKG_PROXY" = "y" ]; then
     sed -i 's#openwrt-lite.pages.dev/openwrt#git.apad.pro/https://raw.githubusercontent.com/pmkol/openwrt-feeds/opkg-repo/openwrt#g' package/new/default-settings/default/zzz-default-settings
 elif [ "$OPKG_PROXY" = "cn" ]; then

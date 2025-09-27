@@ -153,7 +153,6 @@ git clone https://$github/openwrt/openwrt master/openwrt --depth=1
 git clone https://$github/openwrt/packages master/packages --depth=1
 git clone https://$github/openwrt/luci master/luci --depth=1
 git clone https://$github/openwrt/routing master/routing --depth=1
-[ "$ARCHIVE_BUILD" = "y" ] && git clone https://$github/pmkol/openwrt-feeds -b archive-23.05 master/archive-23.05 --depth=1
 
 # openwrt toolchain
 git clone https://$github/pmkol/openwrt-llvm-toolchain master/toolchain -b gcc14 --depth=1
@@ -162,6 +161,7 @@ git clone https://$github/pmkol/openwrt-llvm-toolchain master/toolchain -b gcc14
 git clone https://$github/pmkol/openwrt-feeds master/base-23.05 -b base-23.05 --depth=1
 git clone https://$github/pmkol/openwrt-feeds master/extd-23.05 -b extd-23.05 --depth=1
 git clone https://$github/pmkol/openwrt-feeds master/lite-23.05 -b lite-23.05 --depth=1
+git clone https://$github/pmkol/openwrt-feeds master/archive-23.05 -b archive-23.05 --depth=1
 [ "$(whoami)" = "runner" ] && endgroup
 
 # openwrt lite
